@@ -13,6 +13,7 @@ export const Register = () => {
     email: '',
     password: '',
     repeatPassword: '',
+    role:["READER"]
   });
   const [errorForm, setError] = useState({});
 
@@ -32,6 +33,13 @@ export const Register = () => {
     setFormData((preData) => ({
       ...preData,
       [name]: value,
+    }));
+  };
+
+  const handleCreator = () => {
+    setFormData((preData) => ({
+      ...preData,
+      role: preData.role[0]==="READER"?["CREATOR"]:["READER"],
     }));
   };
 
@@ -62,6 +70,7 @@ export const Register = () => {
           email: '',
           password: '',
           repeatPassword: '',
+          role:["READER"]
         });
       } catch (err) {
         setNotification({
@@ -128,12 +137,41 @@ export const Register = () => {
           onInput={handleInputChange}
           error={errorForm.repeatPassword}
         />
+
+        <div className="relative">
+          <input
+            className="text-violet-500 focus:ring-violet-300 border-gray-300 peer rounded-lg w-6 h-6 absolute top-7 left-4 "
+            id="custom-checkbox"
+            name="custom-checkbox"
+            type="checkbox"
+            value="custom-checkbox"
+            onChange={handleCreator}
+          />
+          <label
+            className="w-[400px] h-[80px] cursor-pointer flex flex-row justify-between items-center border rounded-lg p-4  
+          active:bg-violet-700 
+          peer-focus:outline-none peer-focus:ring peer-focus:ring-violet-300 
+          peer-checked:border-violet-300 peer-checked:bg-violet-100
+          hover:bg-violet-100"
+            htmlFor="custom-checkbox"
+          >
+            <div className="flex flex-row justify-between items-center w-[380px] ml-10 mr-4">
+              <div>
+                <h3 className="font-bold">I want a creator</h3>
+                <p className="text-sm text-gray-400">Access to create content</p>
+              </div>
+              <p className="font-bold text-violet-600">Free</p>
+            </div>
+          </label>
+        </div>
+
         <input
           type="submit"
           value="Register"
-          className="bg-indigo-600 w-full m-2 text-white py-2 
-          hover:cursor-pointer hover:bg-indigo-950 transition-colors"
+          className="bg-indigo-600 w-full m-5 text-white py-2 
+          hover:cursor-pointer hover:bg-indigo-950 transition-colors "
         />
+
       </form>
       <nav className="lg:flex lg:justify-around">
         <Link
