@@ -5,7 +5,6 @@ export class AuthRepositoryImpl implements AuthRepository{
         private readonly authDatasource: AuthDataSource,
     ){}
     register(registerUserDto: RegisterUerDto): Promise<UserEntity> {
-        throw new Error("Method not implemented.");
         return this.authDatasource.register(registerUserDto)
     }
 

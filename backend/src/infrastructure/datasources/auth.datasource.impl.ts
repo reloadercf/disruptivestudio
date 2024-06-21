@@ -3,6 +3,7 @@ import { AuthDataSource, CustomError, RegisterUerDto, UserEntity } from "../../d
 export class AuthDatasourceImpl implements AuthDataSource {
     async register( registerUserDto: RegisterUerDto): Promise<UserEntity> {
         const {username, email, password} = registerUserDto;
+        console.log('ya llegue')
         try{
 
             return new UserEntity(
