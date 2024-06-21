@@ -5,9 +5,10 @@ export class RegisterUerDto{
         public username: string,
         public email: string,
         public password: string,
+        public role: [string]
     ){}
     static create(object: {[key:string]: any}):[string?, RegisterUerDto?]{
-        const { username, email, password} = object;
+        const { username, email, password, role} = object;
         if(!username) return ['username is required'];
         if(!email) return ['Missing email'];
         if(!Validators.email.test(email)) return ['Invalid email']
@@ -15,7 +16,7 @@ export class RegisterUerDto{
         if(password.length <5) return ['Password short']
 
         return [undefined,
-            new RegisterUerDto(username, email, password)
+            new RegisterUerDto(username, email, password, role)
         ]
     }
 }
