@@ -2,6 +2,15 @@
 
 # Welcome to my technical test for Disruptive Studio
 
+## Use the results of project
+
+[First Visit this link for turn-on the backend](https://disruptivestudio-backend.onrender.com)
+
+Then you need show the message: ***Welcome to the backend by @reloadercf***  
+if you show the message, all is OK
+
+After continue to [visit the frontend https://disruptivestudio.netlify.app](https://disruptivestudio.netlify.app)
+
 ## First steps
 
 Understand the problem and create MVP using a fast mockup for print the main idea
