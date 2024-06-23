@@ -3,3 +3,8 @@ export * from './entities/user.entity'
 export * from './errors/custom.error'
 export * from './datasources/auth.datasource'
 export * from './repositories/auth.repository'
+//
+export * from './dtos/content/create-thematic-content.dto'
+export * from './entities/thematic.entity'
+export * from './datasources/content.datasource'
+export * from './repositories/content.repository'
